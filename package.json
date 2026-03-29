@@ -1,0 +1,43 @@
+{
+  "name": "costillery",
+  "version": "1.0.2",
+  "description": "Receipt collection SDK for AI agents — auto-capture MPP and x402 payment receipts and challenges",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./wrapper-fetch": {
+      "types": "./dist/wrapper-fetch.d.ts",
+      "default": "./dist/wrapper-fetch.js"
+    },
+    "./wrapper-axios": {
+      "types": "./dist/wrapper-axios.d.ts",
+      "default": "./dist/wrapper-axios.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "receipts",
+    "mpp",
+    "x402",
+    "payments",
+    "agents",
+    "expenses",
+    "costillery"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wytcab/costillery"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  }
+}
