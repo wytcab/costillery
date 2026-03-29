@@ -2,7 +2,7 @@
 
 **Receipt intelligence for AI agents.**
 
-Costillery automatically captures payment receipts from AI agents running on MPP and x402 payment protocols. Every transaction — search queries, API calls, compute requests — gets logged, enriched with service metadata, and organized for expense tracking and commerce analytics.
+Costillery automatically captures payment receipts from AI agents running on MPP and x402 payment protocols. All transactions, search queries, API calls, compute requests and more get logged, enriched with service metadata, and organized for expense tracking and commerce analytics.
 
 ---
 
@@ -76,8 +76,8 @@ const response = await wrappedFetch('https://api.openai.com/v1/models', initOpti
 ```
 
 No account needed. $0.002 per receipt, settled on Tempo mainnet. Query your spending:
-- `GET /v1/wallet/:address/summary` — $0.005 per query
-- `GET /v1/wallet/:address/receipts` — $0.005 per query
+- `GET /v1/wallet/:address/summary` - $0.005 per query
+- `GET /v1/wallet/:address/receipts` - $0.005 per query
 
 **Claim your receipts into a dashboard account at [costillery.com/claim](https://costillery.com/claim)**
 
@@ -87,7 +87,7 @@ No account needed. $0.002 per receipt, settled on Tempo mainnet. Query your spen
 | Best for | Teams, dashboards, exports | Agents, no-signup flows |
 | Auth | API key | Wallet + micro-payment |
 | Free tier | 5,000 receipts/mo | Pay per receipt |
-| Requires | Sign up | Nothing — just a wallet |
+| Requires | Sign up | Nothing - just a wallet |
 
 ### Submit receipts directly (no SDK)
 ```bash
@@ -136,7 +136,7 @@ When you wrap `globalThis.fetch`, every HTTP response is intercepted:
 x402 payments use a challenge/response flow:
 
 1. Agent makes a request → server returns `402 Payment Required` with a `WWW-Authenticate: Payment` header
-2. Costillery captures the challenge (which contains the **requested amount** — critical for x402 where the receipt has no amount)
+2. Costillery captures the challenge (which contains the **requested amount** - critical for x402 where the receipt has no amount)
 3. Agent pays on-chain
 4. Server returns `200 OK` with a `Payment-Response` header (the receipt)
 5. Costillery attaches the captured challenge to the receipt and submits both
